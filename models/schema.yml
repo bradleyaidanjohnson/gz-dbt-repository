@@ -16,6 +16,28 @@ sources:
         tests:
         - unique:
             column_name: "(orders_id || pdt_id)"
+        columns:
+          - name: date_date
+            description: date of sale
+            tests:
+              - not_null
+          - name: orders_id
+            description: unique order id
+            tests:
+              - not_null
+          - name: pdt_id
+            description: unique product id
+            tests:
+              - not_null
+          - name: revenue
+            description: revnue gained from transaction
+            tests:
+              - not_null
+          - name: quantity
+            description: quantity of product ordered
+            tests:
+              - not_null
+            
             
       - name: product
         identifier: raw_gz_product
@@ -26,6 +48,10 @@ sources:
             tests:
               - unique
               - not_null
+          - name: purchse_price
+            description: price per product
+            tests:
+              - not_null
                   
       - name: ship
         identifier: raw_gz_ship
@@ -35,4 +61,16 @@ sources:
             description: unique id of the order to be shipped
             tests:
               - unique
+              - not_null
+          - name: shipping_fee
+            description: fee charged to customer for shipping
+            tests:
+              - not_null
+          - name: logcost
+            description: cost for logging to company
+            tests:
+              - not_null
+          - name: ship_cost
+            description: cost for shipping to the company
+            tests:
               - not_null
