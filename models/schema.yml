@@ -74,3 +74,9 @@ sources:
             description: cost for shipping to the company
             tests:
               - not_null
+      - name: adwords
+        identifier: raw_gz_adwords
+        description: adwords campaign data
+        tests:
+        - unique:
+            column_name: "(date_date || campaign_key)"
