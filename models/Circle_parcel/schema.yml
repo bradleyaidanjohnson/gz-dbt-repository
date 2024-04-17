@@ -1,0 +1,45 @@
+version: 2
+
+sources:
+  - name: raw_circle
+    schema: raw_data_circle
+    description: Raw circle data
+    tables:
+      - name: parcel
+        identifier: raw_cc_parcel
+        description: Parcel information including tracking details and shipping status.
+        columns:
+          - name: parcel_id
+            description: Unique identifier for each parcel.
+            tests:
+              - unique
+          - name: parcel_tracking
+            description: Tracking information for the parcel.
+          - name: transporter
+            description: Name of the transporter company.
+          - name: priority
+            description: Priority level of the parcel.
+          - name: date_purchase
+            description: Date of purchase for the parcel.
+          - name: date_shipping
+            description: Date when the parcel was shipped.
+          - name: date_delivery
+            description: Date of parcel delivery.
+          - name: datecancelled
+            description: Date when the parcel was cancelled, if applicable.
+      - name: parcel_product
+        identifier: raw_cc_parcel_product
+        description: Information about products contained within parcels.
+        columns:
+          - name: parcel_id
+            description: Unique identifier for the parcel.
+            tests:
+              - not_null
+          - name: model_mame
+            description: Name of the product model.
+            tests:
+              - not_null
+          - name: quantity
+            description: Quantity of the product in the parcel.
+            tests:
+              - not_null
