@@ -80,3 +80,145 @@ sources:
         tests:
         - unique:
             column_name: "(date_date || campaign_key)"
+        columns:
+          - name: date_date
+            description: campaign date
+            tests:
+              - not_null
+          - name: paid_source
+            description: advertisement platform
+            tests:
+              - not_null
+          - name: campaign_key
+            description: key to identify different campaigns
+            tests:
+              - not_null
+          - name: campgn_name
+            description: name to define campaign
+            tests:
+              - not_null
+          - name: ads_cost
+            description: fee to company for advertising
+            tests:
+              - not_null
+          - name: impression
+            description: reach of advertising campaign
+            tests:
+              - not_null
+          - name: click
+            description: how many actually clicked
+            tests:
+              - not_null
+      - name: bing
+        identifier: raw_gz_bing
+        description: bing campaign data
+        tests:
+        - unique:
+            column_name: "(date_date || campaign_key)"
+        columns:
+          - name: date_date
+            description: campaign date
+            tests:
+              - not_null
+          - name: paid_source
+            description: advertisement platform
+            tests:
+              - not_null
+          - name: campaign_key
+            description: key to identify different campaigns
+            tests:
+              - not_null
+          - name: campgn_name
+            description: name to define campaign
+            tests:
+              - not_null
+          - name: ads_cost
+            description: fee to company for advertising
+            tests:
+              - not_null
+          - name: impression
+            description: reach of advertising campaign
+            tests:
+              - not_null
+          - name: click
+            description: how many actually clicked
+            tests:
+              - not_null
+      - name: criteo
+        identifier: raw_gz_criteo
+        description: criteo campaign data
+        tests:
+        - unique:
+            column_name: "(date_date || campaign_key)"
+        columns:
+          - name: date_date
+            description: campaign date
+            tests:
+              - not_null
+          - name: paid_source
+            description: advertisement platform
+            tests:
+              - not_null
+          - name: campaign_key
+            description: key to identify different campaigns
+            tests:
+              - not_null
+          - name: campgn_name
+            description: name to define campaign
+            tests:
+              - not_null
+          - name: ads_cost
+            description: fee to company for advertising
+            tests:
+              - not_null
+          - name: impression
+            description: reach of advertising campaign
+            tests:
+              - not_null
+          - name: click
+            description: how many actually clicked
+            tests:
+              - not_null
+      - name: facebook
+        identifier: raw_gz_facebook
+        description: facebook campaign data
+        tests:
+        - unique:
+            column_name: "(date_date || campaign_key)"
+        columns:
+          - name: date_date
+            description: campaign date
+            tests:
+              - not_null
+          - name: paid_source
+            description: advertisement platform
+            tests:
+              - not_null
+          - name: campaign_key
+            description: key to identify different campaigns
+            tests:
+              - not_null
+          - name: campgn_name
+            description: name to define campaign
+            tests:
+              - not_null
+          - name: ads_cost
+            description: fee to company for advertising
+            tests:
+              - not_null
+          - name: impression
+            description: reach of advertising campaign
+            tests:
+              - not_null
+          - name: click
+            description: how many actually clicked
+            tests:
+              - not_null
+
+models:
+  - name: finance_campaigns_month
+    columns:
+      - name: campaign_year
+        description: year in question
+        tests:
+          - not_null
